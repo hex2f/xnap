@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import Xnap from '../lib'
 import './style.css'
 
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+
 class App extends Component {
   constructor () {
     super()
@@ -23,7 +25,8 @@ class App extends Component {
     this.card = new Xnap(this.refs.card, {
       onTrue: this.enableBackground,
       onFalse: this.disableBackground,
-      states: ['0% + ', '100% - 36px + ']
+      states: ['0% + ', '100% - 36px + '],
+      vibrate: 8
     })
     this.card.register()
 
@@ -31,8 +34,9 @@ class App extends Component {
       states: ['-100% + ', '100% + '],
       factor: 25,
       length: 50,
-      direction: 0,
-      state: true
+      direction: 3,
+      state: true,
+      vibrate: 4
     })
     this.small.register()
   }
@@ -40,6 +44,7 @@ class App extends Component {
   render () {
     return (
       <div className='app' ref='app'>
+        <button onTouchStart={() => navigator.vibrate(4)} onTouchEnd={() => navigator.vibrate(2)}>Bzzz</button>
         <div className='card small' ref='small' />
         <div className='card' ref='card'>
           <div className='dragIndicator' />
