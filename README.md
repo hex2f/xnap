@@ -2,6 +2,9 @@
 
 Components that snap.
 
+## Demo
+[https://mobooru.github.io/xnap/](https://mobooru.github.io/xnap/)
+
 ![Demo Gif](./demo.gif)
 
 ```
