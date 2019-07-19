@@ -4,6 +4,10 @@ Components that snap.
 
 ![Demo Gif](./demo.gif)
 
+```
+npm i --save xnap
+```
+
 ## How do i use it?
 
 For a full example, check out /example.
