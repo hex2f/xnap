@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import Highlight from 'react-highlight'
 import Xnap from '../lib'
+import './atom-one-dark.css'
 import './style.css'
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
@@ -25,8 +27,11 @@ class App extends Component {
     this.card = new Xnap(this.refs.card, {
       onTrue: this.enableBackground,
       onFalse: this.disableBackground,
-      states: ['0% + ', '100% - 36px + '],
-      vibrate: 8
+      states: ['0% + ', '90% - 30px + '],
+      state: false,
+      scaleStates: [1, 0.8],
+      vibrate: 8,
+      exact: true
     })
     this.card.register()
 
@@ -34,20 +39,47 @@ class App extends Component {
       states: ['-100% + ', '100% + '],
       factor: 25,
       length: 50,
-      direction: 3,
-      state: true,
+      direction: 0,
       vibrate: 4
     })
     this.small.register()
+
+    this.codeCard = new Xnap(this.refs.code, {
+      states: ['0% + ', '150px + '],
+      direction: 0,
+      vibrate: 4
+    })
+    this.codeCard.register()
   }
 
   render () {
     return (
       <div className='app' ref='app'>
-        <button onTouchStart={() => navigator.vibrate(4)} onTouchEnd={() => navigator.vibrate(2)}>Bzzz</button>
-        <div className='card small' ref='small' />
-        <div className='card' ref='card'>
+        <div className='hero'>
+          <div>
+            <h1><a href='https://github.com/mobooru/xnap'>Xnap</a></h1>
+            <p>Components that snap.</p>
+          </div>
+          <div ref='code'>
+            <Highlight className='javascript'>
+              {
+                `// This card
+let xnapCard = new Xnap(component, {
+  states: ['0% + ', '150px + '],
+  direction: 0,
+  vibrate: 4
+})
+xnapCard.register()`
+              }
+            </Highlight>
+          </div>
+          <i className='viewDocsText'><a href='https://github.com/mobooru/xnap'>/* View documentation */</a></i>
+        </div>
+        <i className='dragMeText'>/* psst. drag me */</i>
+        <div className='card big' ref='card'>
           <div className='dragIndicator' />
+          <p>🎶got me walkin' side to side🎶</p>
+          <div className='card small' ref='small' />
         </div>
       </div>
     )

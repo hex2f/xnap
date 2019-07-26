@@ -4,6 +4,14 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .app {
@@ -11,34 +19,103 @@ body {
   width: 100%;
   overflow: hidden;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: background 0.2s;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
+
+.hero h1 {
+  margin-bottom: 0px;
+  font-size: 48px;
+}
+
+.hero p {
+  margin-top: -4px;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+
+.hljs {
+  padding: 12px 108px 12px 12px;
+  pointer-events: none;
+  will-change: transform;
+  border-radius: 6px;
+}
+
+.dragMeText {
+  color: #555;
+  position: absolute;
+  bottom: 50px;
+}
+
+.viewDocsText {
+  font-size: 14px;
+  margin-left: 2px;
+  color: #555;
 }
 
 .card {
   width: calc(100vw - 12px);
+  max-width: 400px;
   height: 70vh;
+  max-height: 300px;
   background: #ffffff;
   position: absolute;
-  bottom: 6px;
-  left: 6px;
+  bottom: 12px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
   will-change: transform;
   border-radius: 16px;
+  cursor: grab;
+}
+
+.big {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.big p {
+  margin-bottom: 32px;
+  font-size: 18px;
 }
 
 .small {
   width: 100px;
   height: 100px;
-  background: red;
-  bottom: calc(50% - 50px);
-  left: calc(50% - 50px);
+  background: rgb(95, 165, 250);
+  position: relative;
 }
 
 .dragIndicator {
   position: absolute;
+  pointer-events: none;
   height: 8px;
   width: 60px;
   background: #333;
   border-radius: 8px;
   top: calc(21px - 4px);
   left: calc(50% - 30px);
+}
+
+@media screen and (max-width: 400px) {
+  .hljs {
+    padding: 12px 12px 12px 12px !important;
+  }
+
+  .small {
+    width: 85px;
+    height: 85px;
+  }
 }

@@ -1,2 +1,0 @@
-body{margin:0;padding:0}.app,body{height:100%;width:100%;overflow:hidden}.app{transition:background .2s}.app,.card{position:absolute}.card{width:calc(100vw - 12px);height:70vh;background:#fff;bottom:6px;left:6px;will-change:transform;border-radius:16px}.small{width:100px;height:100px;background:red;bottom:calc(50% - 50px);left:calc(50% - 50px)}.dragIndicator{position:absolute;height:8px;width:60px;background:#333;border-radius:8px;top:17px;left:calc(50% - 30px)}
-/*# sourceMappingURL=/example.6005c885.css.map */
