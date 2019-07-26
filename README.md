@@ -38,4 +38,4 @@ new Xnap(component, { options })
 | onTrue      | Function     | None                 | Function that triggers when state is set to true.                                                                        |
 | onFalse     | Function     | None                 | Function that triggers when state is set to false.                                                                       |
 | direction   | Number       | 1                    | Which direction it moves. 0 = Left/Right. 1 = Up/Down.                                                                   |
-| vibrate     | Number       | None                 | If a number is given, it vibrates the device on state change for the given duration in MS. Use 20 - 50 for a clicky tap. |
+| vibrate     | Number       | None                 | If a number is given, it vibrates the device on state change for the given duration in MS. Use 2 - 5 for a clicky tap.   |
