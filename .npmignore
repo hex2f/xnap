@@ -2,3 +2,4 @@ demo.gif
 example/
 docs/
 .npmignore
+.cache
